@@ -1,0 +1,40 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+//enter the string that we need to find the string code
+	String input1="hello world";
+//convert the string into upper case
+		
+		input1=input1.toUpperCase();
+//then we split the sentence into words,the split function uses the white space as reference to split the sentence and store it in s
+		String s[]=input1.split(" ");
+//create an empty array to concatenate the sum value
+		String s1=" ";
+		int i,j,sum=0,sum1;
+		for(i=0;i<s.length;i++){
+		    sum=0;
+//the if block is to check if the number of letters in the word are even
+		    if(s[i].length()%2==0){
+//if its even then this for block is executed
+		        for(j=0;j<s[i].length()/2;j++){
+		            sum1=(int)s[i].charAt(j)-(int)s[i].charAt(s[i].length()-j-1);
+		            sum+=Math.abs(sum1);
+		        }
+		    }
+//if its odd then the else stmt is executed
+		    else{
+		        for(j=0;j<s[i].length()/2;j++){
+		            sum1=(int)s[i].charAt(j)-(int)s[i].charAt(s[i].length()-j-1);
+		            sum+=Math.abs(sum1);
+		            
+		        }
+//when the number of letters are odd there will be an extra letter which is also concatenated
+		        sum+=(int)s[i].charAt(s[i].length()/2)-64;
+		    }
+		    s1+=sum;
+		}
+//parseInt is used to store it in integer format
+		System.out.println(Integer.parseInt(s1));
+	}
+}
