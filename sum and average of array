@@ -1,0 +1,29 @@
+import java.util.*;
+public class Main
+{
+    public static int findave(int a[],int n){
+        // sc=new scanner(System.out)
+        int sum=0,i;
+        for(i=0;i<n;i++){
+            sum=sum+a[i];
+        }
+            System.out.println("the sum is"+sum);
+        
+            return (int)sum/2;
+        
+        
+    }
+	public static void main(String[] args) {
+	    int i;
+	    Scanner sc=new Scanner(System.in);
+	    int n;
+	    n=sc.nextInt();
+	    int arr[]=new int[n];
+	    System.out.println("enter the array elements");
+	    for(i=0;i<n;i++){
+	        arr[i]=sc.nextInt();
+	    }
+		System.out.println("average is"+findave(arr,n));
+		
+	}
+}
