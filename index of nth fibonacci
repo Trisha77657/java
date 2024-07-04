@@ -1,0 +1,24 @@
+public class Main{
+public static int findindex(int n)
+{
+    if(n<=0)
+    return 1;
+    int a=0,b=1,c=0;
+    int res=2;
+    while(c<n){
+        c=a+b;
+        res++;
+        a=b;
+        b=c;
+        
+    }
+
+    return res;
+}
+	public static void main(String[] args) {
+	    int result=findindex(5);
+	    System.out.println(result);
+	    
+		
+	}
+}
